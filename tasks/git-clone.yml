@@ -1,0 +1,8 @@
+---
+# Clone repos locally
+- name: Clone Dracula Theme for iterm2
+  git:
+    repo: https://github.com/dracula/iterm.git
+    dest: ~/.profile/
+    clone: yes
+    update: yes

@@ -8,22 +8,22 @@ configure_osx: true
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
 dockitems_remove:
-  - TV
-  - Podcasts
   - 'App Store'
-  - News
-  - Reminders
+  - 'System Settings'
+  - Calendar
   - Contacts
   - FaceTime
   - Mail
   - Maps
-  - 'System Settings'
-  - Photos
-  - Safari
   - Messages
-  - Calendar
-  - Notes
   - Music
+  - News
+  - Notes
+  - Photos
+  - Podcasts
+  - Reminders
+  - Safari
+  - TV
 
 dockitems_persist:
   - name: "Safari"
@@ -51,39 +51,41 @@ dotfiles_repo_accept_hostkey: true
 dotfiles_repo_version: main
 dotfiles_repo_local_destination: ~/GitHub/dotfiles
 dotfiles_files:
-  - .zshrc
   - .gitignore
   - .inputrc
   - .osx
   - .vimrc
+  - .zshrc
 
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
+  - awscli
+  - azure-cli
+  - chrome
+  - gh
   - git
-  - github/gh/gh
   - go
   - gpg
+  - hashicorp/tap/consul
+  - hashicorp/tap/nomad
+  - hashicorp/tap/packer
+  - hashicorp/tap/terraform
+  - hashicorp/tap/vault
+  - helm
+  - htop
   - httpie
   - iperf
+  - kubernetes-cli
+  - mas
   - nmap
-  - ssh-copy-id
-  - readline
   - openssl
   - pv
+  - rclone
+  - readline
+  - ssh-copy-id
   - wget
-  - zsh-history-substring-search
-  - azure-cli
-  - awscli
-  - htop
   - zsh-completions
-  - mas
-  - hashicorp/tap/terraform
-  - hashicorp/tap/packer
-  - hashicorp/tap/vault
-  - hashicorp/tap/nomad
-  - hashicorp/tap/consul
-  - kubernetes-cli
-  - helm
+  - zsh-history-substring-search
+  # - ansible # Installed via Pip.
 
 homebrew_taps:
   - homebrew/core
@@ -95,53 +97,26 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - docker
-  - handbrake
-  - licecap
-  - sequel-ace
-  - rustdesk
-  - betterdiscord-installer
-  - insomnia
-  - dracula-terminal
-  - microsoft-edge
   - 1password
   - 1password-cli
-  - iterm2
-  - visual-studio-code
-  - microsoft-teams
-  - microsoft-office
-  - discord
-  - openlens
-  - github
-  - wireshark
-  - podman-desktop
-  - jetbrains-toolbox
-  - balenaetcher
-  - goland
-  - pycharm
-  - parallels
-  - mosaic
-  - dash
-  - powershell
   - alfred
-  - steam
-  - drawio
-  - microsoft-azure-storage-explorer
-  - microsoft-remote-desktop
+  - audacity
+  - balenaetcher
+  - betterdiscord-installer
+  - betterdisplay
+  - cakebrew
+  - cheatsheet
   - chiaki
-  - parsec
-  # - logitech-g-hub
+  - copilot-for-xcode
+  - dash
+  - discord
+  - dracula-terminal
+  - drawio
+  - firefox
   - font-3270-nerd-font
-  - font-fira-mono-nerd-font
-  - font-inconsolata-go-nerd-font
-  - font-inconsolata-lgc-nerd-font
-  - font-inconsolata-nerd-font
-  - font-monofur-nerd-font
-  - font-overpass-nerd-font
-  - font-ubuntu-mono-nerd-font
   - font-agave-nerd-font
-  - font-arimo-nerd-font
   - font-anonymice-nerd-font
+  - font-arimo-nerd-font
   - font-aurulent-sans-mono-nerd-font
   - font-bigblue-terminal-nerd-font
   - font-bitstream-vera-sans-mono-nerd-font
@@ -154,6 +129,7 @@ homebrew_cask_apps:
   - font-droid-sans-mono-nerd-font
   - font-fantasque-sans-mono-nerd-font
   - font-fira-code-nerd-font
+  - font-fira-mono-nerd-font
   - font-go-mono-nerd-font
   - font-gohufont-nerd-font
   - font-hack-nerd-font
@@ -161,16 +137,21 @@ homebrew_cask_apps:
   - font-heavy-data-nerd-font
   - font-hurmit-nerd-font
   - font-im-writing-nerd-font
+  - font-inconsolata-go-nerd-font
+  - font-inconsolata-lgc-nerd-font
+  - font-inconsolata-nerd-font
   - font-iosevka-nerd-font
   - font-jetbrains-mono-nerd-font
   - font-lekton-nerd-font
   - font-liberation-nerd-font
   - font-meslo-lg-nerd-font
+  - font-monofur-nerd-font
   - font-monoid-nerd-font
   - font-mononoki-nerd-font
   - font-mplus-nerd-font
   - font-noto-nerd-font
   - font-open-dyslexic-nerd-font
+  - font-overpass-nerd-font
   - font-profont-nerd-font
   - font-proggy-clean-tt-nerd-font
   - font-roboto-mono-nerd-font
@@ -179,25 +160,60 @@ homebrew_cask_apps:
   - font-space-mono-nerd-font
   - font-terminess-ttf-nerd-font
   - font-tinos-nerd-font
+  - font-ubuntu-mono-nerd-font
   - font-ubuntu-nerd-font
   - font-victor-mono-nerd-font
-  - launchpad-manager
+  - github
   - gitkraken
-  - cheatsheet
-  - cakebrew
-  
+  - handbrake
+  - insomnia
+  - iterm2
+  - jetbrains-toolbox
+  - launchpad-manager
+  - licecap
+  - logitech-g-hub
+  - macdown
+  - microsoft-azure-storage-explorer
+  - microsoft-edge
+  - microsoft-office
+  - microsoft-remote-desktop
+  - microsoft-teams
+  - mosaic
+  - mqtt-explorer
+  - obs
+  - openlens
+  - orion
+  - parallels
+  - parsec
+  - podman-desktop
+  - powershell
+  - rustdesk
+  - sequel-ace
+  - slack
+  - steam
+  - tor-browser
+  - visual-studio-code
+  - warp
+  - wireshark
+  - zoom
+  # - docker
+  # - goland
+  # - pycharm
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: 
-  - { id: 1569813296, name: "1Password for Safari"}
-  - { id: 1543143740, name: "AdGuard Home Remote"}
+mas_installed_apps:
   - { id: 1458969831, name: "JSON Peep for Safari" }
-  - {id: 682658836, name: "GarageBand"}
+  - { id: 1543143740, name: "AdGuard Home Remote"}
+  - { id: 1569813296, name: "1Password for Safari"}
+  - {id: 1541862561, name: "FireShot Web Page Screenshots"}
+  - {id: 408981434, name: "iMovie"}
+  - {id: 409183694, name: "Keynote"}
   - {id: 409201541, name: "Pages"}
   - {id: 409203825, name: "Numbers"}
-  - {id: 409183694, name: "Keynote"}
-  - {id: 408981434, name: "iMovie"}
-  - {id: 1541862561, name: "FireShot Web Page Screenshots"}
+  - {id: 682658836, name: "GarageBand"}
+  # - friendly streaming
+  # - disk space analyzer
+  # - azure VPN
     #  - { id: , name: "" }
 
 mas_signin_dialog: false
