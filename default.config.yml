@@ -58,6 +58,7 @@ dotfiles_files:
   - .zshrc
 
 homebrew_installed_packages:
+  - ansible-lint
   - awscli
   - azure-cli
   - chrome
@@ -111,6 +112,12 @@ homebrew_cask_apps:
   - dash
   - discord
   - dracula-terminal
+  - dracula-alfred
+  - dracula-betterdiscord
+  - dracula-gitkracken
+  - dracula-insomnia
+  - dracula-macos-color-picker
+  - dracula-xcode
   - drawio
   - firefox
   - font-3270-nerd-font

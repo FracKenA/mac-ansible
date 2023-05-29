@@ -6,3 +6,80 @@
     dest: ~/.profile/
     clone: yes
     update: yes
+
+- name: Clone Dracula Theme for vscode
+  git:
+    repo: https://github.com/dracula/visual-studio-code.git
+    dest: ~/.profile/
+    clone: yes
+    update: yes
+
+- name: Clone Dracula Theme for vim
+  git:
+    repo: https://github.com/dracula/vim.git
+    dest: ~/.profile/
+    clone: yes
+    update: yes
+
+- name: Clone Dracula Theme for terminal
+  git:
+    repo: https://github.com/dracula/terminal-app.git
+    dest: ~/.profile/
+    clone: yes
+    update: yes
+
+- name: Clone Dracula Theme for zsh
+  git:
+    repo: https://github.com/dracula/zsh.git
+    dest: ~/.profile/
+    clone: yes
+    update: yes
+
+- name: Clone Dracula Theme for visual studio
+  git:
+    repo: https://github.com/dracula/visual-studio
+    dest: ~/.profile/
+    clone: yes
+    update: yes
+
+- name: Clone Dracula Theme wallpapers
+  git:
+    repo: https://github.com/dracula/wallpaper.git
+    dest: ~/.profile/
+    clone: yes
+    update: yes
+
+- name: Clone Dracula Theme for sequel pro
+  git:
+    repo: https://github.com/dracula/sequel-pro.git
+    dest: ~/.profile/
+    clone: yes
+    update: yes
+
+- name: Clone Dracula Theme for zsh syntax highlighting
+  git:
+    repo: https://github.com/dracula/zsh-syntax-highlighting.git
+    dest: ~/.profile/
+    clone: yes
+    update: yes
+
+- name: Clone Dracula Theme for macdown
+  git:
+    repo: https://github.com/dracula/macdown.git
+    dest: ~/.profile/
+    clone: yes
+    update: yes
+
+- name: Clone Dracula Theme for git
+  git:
+    repo: https://github.com/dracula/git.git
+    dest: ~/.profile/
+    clone: yes
+    update: yes
+
+- name: Clone Dracula Theme for warp
+  git:
+    repo: https://github.com/dracula/warp.git
+    dest: ~/.profile/
+    clone: yes
+    update: yes
