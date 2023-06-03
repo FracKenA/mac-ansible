@@ -1,85 +1,97 @@
 ---
 # Clone repos locally
 - name: Clone Dracula Theme for iterm2
-  git:
+  ansible.builtin.git:
     repo: https://github.com/dracula/iterm.git
-    dest: ~/.profile/
-    clone: yes
-    update: yes
+    dest: ~/.profile/iterm2/
+    clone: true
+    update: true
+    version: HEAD # noqa: latest
 
 - name: Clone Dracula Theme for vscode
-  git:
+  ansible.builtin.git:
     repo: https://github.com/dracula/visual-studio-code.git
-    dest: ~/.profile/
-    clone: yes
-    update: yes
+    dest: ~/.profile/vscode/
+    clone: true
+    update: true
+    version: HEAD # noqa: latest
 
 - name: Clone Dracula Theme for vim
-  git:
+  ansible.builtin.git:
     repo: https://github.com/dracula/vim.git
-    dest: ~/.profile/
-    clone: yes
-    update: yes
+    dest: ~/.profile/vim/
+    clone: true
+    update: true
+    version: HEAD # noqa: latest
 
 - name: Clone Dracula Theme for terminal
-  git:
+  ansible.builtin.git:
     repo: https://github.com/dracula/terminal-app.git
-    dest: ~/.profile/
-    clone: yes
-    update: yes
+    dest: ~/.profile/terminal/
+    clone: true
+    update: true
+    version: HEAD # noqa: latest
 
 - name: Clone Dracula Theme for zsh
-  git:
+  ansible.builtin.git:
     repo: https://github.com/dracula/zsh.git
-    dest: ~/.profile/
-    clone: yes
-    update: yes
+    dest: ~/.profile/zsh/
+    clone: true
+    update: true
+    version: HEAD # noqa: latest
 
 - name: Clone Dracula Theme for visual studio
-  git:
+  ansible.builtin.git:
     repo: https://github.com/dracula/visual-studio
-    dest: ~/.profile/
-    clone: yes
-    update: yes
+    dest: ~/.profile/visual-studio/
+    clone: true
+    update: true
+    version: HEAD # noqa: latest
 
 - name: Clone Dracula Theme wallpapers
-  git:
+  ansible.builtin.git:
     repo: https://github.com/dracula/wallpaper.git
-    dest: ~/.profile/
-    clone: yes
-    update: yes
+    dest: ~/.profile/wallpaper/
+    clone: true
+    update: true
+    version: HEAD # noqa: latest
 
 - name: Clone Dracula Theme for sequel pro
-  git:
+  ansible.builtin.git:
     repo: https://github.com/dracula/sequel-pro.git
-    dest: ~/.profile/
-    clone: yes
-    update: yes
+    dest: ~/.profile/sequel-pro/
+    clone: true
+    update: true
+    version: HEAD # noqa: latest
 
 - name: Clone Dracula Theme for zsh syntax highlighting
-  git:
+  ansible.builtin.git:
     repo: https://github.com/dracula/zsh-syntax-highlighting.git
-    dest: ~/.profile/
-    clone: yes
-    update: yes
+    dest: ~/.profile/zsh-syntax-highlighting/
+    clone: true
+    update: true
+    version: HEAD # noqa: latest
 
 - name: Clone Dracula Theme for macdown
-  git:
+  ansible.builtin.git:
     repo: https://github.com/dracula/macdown.git
-    dest: ~/.profile/
-    clone: yes
-    update: yes
+    dest: ~/.profile/macdown/
+    clone: true
+    update: true
+    version: HEAD # noqa: latest
 
 - name: Clone Dracula Theme for git
-  git:
+  ansible.builtin.git:
     repo: https://github.com/dracula/git.git
-    dest: ~/.profile/
-    clone: yes
-    update: yes
+    dest: ~/.profile/git/
+    clone: true
+    update: true
+    version: HEAD # noqa: latest
 
 - name: Clone Dracula Theme for warp
-  git:
+  ansible.builtin.git:
     repo: https://github.com/dracula/warp.git
-    dest: ~/.profile/
-    clone: yes
-    update: yes
+    dest: ~/.profile/warp/
+    clone: true
+    update: true
+    version: HEAD # noqa: latest

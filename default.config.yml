@@ -4,6 +4,7 @@ downloads: ~/.ansible-downloads/
 configure_dotfiles: true
 configure_terminal: false
 configure_osx: true
+clone_repos: true
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
@@ -25,19 +26,26 @@ dockitems_remove:
   - Safari
   - TV
 
+# dockitems_persist:
+#   - name: "Safari"
+#     path: "/System/Cryptexes/App/System/Applications/Safari.app"
+#     pos: 2
+#   - name: "Microsoft Teams"
+#     path: "/Applications/Microsoft Teams.app"
+#     pos: 3
+#   - name: "Microsoft Outlook"
+#     path: "/Applications/Microsoft Outlook.app"
+#     pos: 4
+#   - name: "Visual Studio Code"
+#     path: "/Applications/Visual Studio Code.app"
+#     pos: 5
+
 dockitems_persist:
-  - name: "Safari"
-    path: "/System/Cryptexes/App/System/Applications/Safari.app"
-    pos: 2
-  - name: "Microsoft Teams"
-    path: "/Applications/Microsoft Teams.app"
-    pos: 3
-  - name: "Microsoft Outlook"
-    path: "/Applications/Microsoft Outlook.app"
-    pos: 4
-  - name: "Visual Studio Code"
-    path: "/Applications/Visual Studio Code.app"
-    pos: 5
+  - { name: "Safari", path: "/System/Cryptexes/App/System/Applications/Safari.app", pos: 2 }
+  - { name: "Microsoft Teams", path: "/Applications/Microsoft Teams.app", pos: 3 }
+  - { name: "Microsoft Outlook", path: "/Applications/Microsoft Outlook.app", pos: 4 }
+  - { name: "Visual Studio Code", path: "/Applications/Visual Studio Code.app", pos: 5 }
+
 
 configure_sudoers: false
 sudoers_custom_config: ''
@@ -60,8 +68,8 @@ dotfiles_files:
 homebrew_installed_packages:
   - ansible-lint
   - awscli
+  - aztfexport
   - azure-cli
-  - chrome
   - gh
   - git
   - go
@@ -78,6 +86,7 @@ homebrew_installed_packages:
   - kubernetes-cli
   - mas
   - nmap
+  - node
   - openssl
   - pv
   - rclone
@@ -100,7 +109,9 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - 1password
   - 1password-cli
+  - airfoil
   - alfred
+  - alt-tab
   - audacity
   - balenaetcher
   - betterdiscord-installer
@@ -114,10 +125,10 @@ homebrew_cask_apps:
   - dracula-terminal
   - dracula-alfred
   - dracula-betterdiscord
-  - dracula-gitkracken
+  - dracula-gitkraken
   - dracula-insomnia
-  - dracula-macos-color-picker
-  - dracula-xcode
+  # - dracula-macos-color-picker
+  # - dracula-xcode
   - drawio
   - firefox
   - font-3270-nerd-font
@@ -172,6 +183,7 @@ homebrew_cask_apps:
   - font-victor-mono-nerd-font
   - github
   - gitkraken
+  - google-chrome
   - handbrake
   - insomnia
   - iterm2
@@ -197,10 +209,12 @@ homebrew_cask_apps:
   - rustdesk
   - sequel-ace
   - slack
+  - soundsource
   - steam
   - tor-browser
+  - tunnelblick
   - visual-studio-code
-  - warp
+  # - warp
   - wireshark
   - zoom
   # - docker
@@ -218,10 +232,17 @@ mas_installed_apps:
   - {id: 409201541, name: "Pages"}
   - {id: 409203825, name: "Numbers"}
   - {id: 682658836, name: "GarageBand"}
-  # - friendly streaming
-  # - disk space analyzer
-  # - azure VPN
-    #  - { id: , name: "" }
+  - {id: 1447778660, name: "iStatistica Pro"}
+  - { id: 553245401, name: "Friendly Streaming Browser" }
+  - { id: 446243721, name: "Disk Space Analyzer: Inspector" }
+  - { id: 1553936137, name: Azure VPN Client" }
+  - { id: 1499198946, name: "Structured - Daily Planner" }
+  - { id: 1549370672, name: "Save to Raindrop.io" }
+  - { id: 937984704, name: "Amphetamine" }
+  - { id: 899247664, name: "TestFlight" }
+  # - { id: 497799835, name: "Xcode" }
+  # - { id: 2143935391, name: "OpenCat" }
+  # - { id: , name: "" }
 
 mas_signin_dialog: false
 mas_email: ""
