@@ -17,31 +17,31 @@
         name: "{{ item.role }}"
         apply:
           tags: "{{ item.tags }}"
-      when: item.when is defined and item.when
+      when: item.when
       loop:
-        - { role: elliotweiser.osx-command-line-tools, tags: [], when: 'always' }
-        - { role: geerlingguy.mac.homebrew, tags: ['homebrew'], when: 'always' }
+        - { role: elliotweiser.osx-command-line-tools, tags: ['command_line_tools'], when: install_command_line_tools }
+        - { role: geerlingguy.mac.homebrew, tags: ['homebrew'], when: install_homebrew }
         - { role: geerlingguy.dotfiles, tags: ['dotfiles'], when: configure_dotfiles }
         - { role: geerlingguy.mac.mas, tags: ['mas'], when: mas_installed_apps or mas_installed_app_ids }
         - { role: geerlingguy.mac.dock, tags: ['dock'], when: configure_dock }
         # Install roles based on conditions and tags.
 
-    - name: Run sudoers, terminal, osx, extra-packages, git clone tasks.
-      ansible.builtin.include_tasks: tasks/{{ item }}.yml
-      when: vars[item]
-      loop:
-        - sudoers
-        - terminal
-        - osx
-        - extra-packages
-        - git-clone
-      tags: ['{{ item }}']
-      # Include task files based on conditions and tags.
+    # - name: Run sudoers, terminal, osx, extra-packages, git clone tasks.
+    #   ansible.builtin.include_tasks: tasks/{{ item }}.yml
+    #   when: vars[item]
+    #   loop:
+    #     - sudoers
+    #     - terminal
+    #     - osx
+    #     - extra-packages
+    #     - git-clone
+    #   tags: ['{{ item }}']
+    #   # Include task files based on conditions and tags.
 
-    - name: Run configured post-provision ansible task files.
-      ansible.builtin.include_tasks: "{{ outer_item }}"
-      loop: "{{ post_provision_tasks | default([]) }}"
-      loop_control:
-        loop_var: outer_item
-      tags: ['post']
-      # Include post-provision task files based on the provided list.
+    # - name: Run configured post-provision ansible task files.
+    #   ansible.builtin.include_tasks: "{{ outer_item }}"
+    #   loop: "{{ post_provision_tasks | default([]) }}"
+    #   loop_control:
+    #     loop_var: outer_item
+    #   tags: ['post']
+    #   # Include post-provision task files based on the provided list.
