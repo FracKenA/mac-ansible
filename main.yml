@@ -20,10 +20,10 @@
       when: item.when
       loop:
         - { role: elliotweiser.osx-command-line-tools, tags: 'command_line_tools', when: install_command_line_tools }
-        - { role: geerlingguy.mac.homebrew, tags: ['homebrew'], when: install_homebrew }
-        - { role: geerlingguy.dotfiles, tags: ['dotfiles'], when: configure_dotfiles }
-        - { role: geerlingguy.mac.mas, tags: ['mas'], when: mas_installed_apps or mas_installed_app_ids }
-        - { role: geerlingguy.mac.dock, tags: ['dock'], when: configure_dock }
+        - { role: geerlingguy.mac.homebrew, tags: 'homebrew', when: install_homebrew }
+        - { role: geerlingguy.dotfiles, tags: 'dotfiles', when: configure_dotfiles }
+        - { role: geerlingguy.mac.mas, tags:  'mas', when: mas_installed_apps or mas_installed_app_ids }
+        - { role: geerlingguy.mac.dock, tags:  'dock', when: configure_dock }
         # Install roles based on conditions and tags.
 
     # - name: Run sudoers, terminal, osx, extra-packages, git clone tasks.
