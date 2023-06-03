@@ -19,8 +19,8 @@
           tags: "{{ item.tags }}"
       when: item.when is defined and item.when
       loop:
-        - { role: elliotweiser.osx-command-line-tools, tags: [] }
-        - { role: geerlingguy.mac.homebrew, tags: ['homebrew'] }
+        - { role: elliotweiser.osx-command-line-tools, tags: [], when: 'always' }
+        - { role: geerlingguy.mac.homebrew, tags: ['homebrew'], when: 'always' }
         - { role: geerlingguy.dotfiles, tags: ['dotfiles'], when: configure_dotfiles }
         - { role: geerlingguy.mac.mas, tags: ['mas'], when: mas_installed_apps or mas_installed_app_ids }
         - { role: geerlingguy.mac.dock, tags: ['dock'], when: configure_dock }
