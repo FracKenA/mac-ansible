@@ -1,6 +1,8 @@
 ---
 downloads: ~/.ansible-downloads/
 
+install_command_line_tools: true
+install_homebrew: true
 configure_dotfiles: true
 configure_terminal: false
 configure_osx: true
