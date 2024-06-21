@@ -1,15 +1,18 @@
 ---
 downloads: ~/.ansible-downloads/
 
-install_command_line_tools: true
-install_homebrew: true
-configure_dotfiles: true
-configure_terminal: false
-configure_osx: true
-clone_repos: true
+command_line_tools: true
+homebrew: true
+dotfiles: false
+mas: false
+dock: false
+sudoers: false
+terminal: false
+osx: true
+extra-packages: false
+git-clone: flase
 
-# Set to 'true' to configure the Dock via dockutil.
-configure_dock: true
+
 dockitems_remove:
   - 'App Store'
   - 'System Settings'
@@ -44,17 +47,18 @@ dockitems_remove:
 
 dockitems_persist:
   - { name: "Safari", path: "/System/Cryptexes/App/System/Applications/Safari.app", pos: 2 }
-  - { name: "Microsoft Teams", path: "/Applications/Microsoft Teams.app", pos: 3 }
-  - { name: "Microsoft Outlook", path: "/Applications/Microsoft Outlook.app", pos: 4 }
+  # - { name: "Microsoft Teams", path: "/Applications/Microsoft Teams.app", pos: 3 }
+  # - { name: "Microsoft Outlook", path: "/Applications/Microsoft Outlook.app", pos: 4 }
   - { name: "Visual Studio Code", path: "/Applications/Visual Studio Code.app", pos: 5 }
 
 
-configure_sudoers: false
+
 sudoers_custom_config: ''
 # Example:
 # sudoers_custom_config: |
 #   # Allow users in admin group to use sudo with no password.
 #   %admin ALL=(ALL) NOPASSWD: ALL
+
 
 dotfiles_repo: https://github.com/FracKenA/dots.git
 dotfiles_repo_accept_hostkey: true
@@ -100,28 +104,28 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
 
 homebrew_taps:
-  - homebrew/core
-  - homebrew/cask
   - dracula/install
   - hashicorp/tap
-  # - homebrew/cask-driver
-  - homebrew/cask-fonts
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - 1password
   - 1password-cli
+  - airbuddy
   - airfoil
   - alfred
-  - alt-tab
-  - audacity
-  - balenaetcher
-  - betterdiscord-installer
+  # - alt-tab
+  # - audacity
+  - audio-hijack
+  # - balenaetcher
+  # - betterdiscord-installer
   - betterdisplay
-  - cakebrew
-  - cheatsheet
+  # - cakebrew
+  # - cheatsheet
+  - chatgpt
   - chiaki
-  - copilot-for-xcode
+  # - copilot-for-xcode
+  - citrix-workspace
   - dash
   - discord
   - dracula-terminal
@@ -133,6 +137,8 @@ homebrew_cask_apps:
   # - dracula-xcode
   - drawio
   - firefox
+  - fission
+  - focusrite-control
   - font-3270-nerd-font
   - font-agave-nerd-font
   - font-anonymice-nerd-font
@@ -186,38 +192,49 @@ homebrew_cask_apps:
   - github
   - gitkraken
   - google-chrome
-  - handbrake
+  # - handbrake
   - insomnia
   - iterm2
-  - jetbrains-toolbox
+  # - jetbrains-toolbox
   - launchpad-manager
-  - licecap
+  # - licecap
+  - lm-studio
   - logitech-g-hub
-  - macdown
+  - loopback
+  # - macdown
+  - macwhisper
   - microsoft-azure-storage-explorer
   - microsoft-edge
   - microsoft-office
   - microsoft-remote-desktop
-  - microsoft-teams
-  - mosaic
-  - mqtt-explorer
-  - obs
+  # - microsoft-teams
+  - mongodb-compass
+  - moonlight
+  # - mosaic
+  # - mqtt-explorer
+  # - obs
   - openlens
-  - orion
-  - parallels
+  # - orion
+  # - parallels
   - parsec
+  - pieces-os
+  - pieces-cli
+  - pieces
+  - piezo
   - podman-desktop
   - powershell
-  - rustdesk
+  # - rustdesk
   - sequel-ace
   - slack
   - soundsource
   - steam
-  - tor-browser
+  - telegram
+  # - tor-browser
   - tunnelblick
   - visual-studio-code
+  - vmware-horizon-client
   # - warp
-  - wireshark
+  # - wireshark
   - zoom
   # - docker
   # - goland
@@ -225,24 +242,24 @@ homebrew_cask_apps:
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
-  - { id: 1458969831, name: "JSON Peep for Safari" }
-  - { id: 1543143740, name: "AdGuard Home Remote"}
-  - { id: 1569813296, name: "1Password for Safari"}
-  - {id: 1541862561, name: "FireShot Web Page Screenshots"}
-  - {id: 408981434, name: "iMovie"}
-  - {id: 409183694, name: "Keynote"}
-  - {id: 409201541, name: "Pages"}
-  - {id: 409203825, name: "Numbers"}
-  - {id: 682658836, name: "GarageBand"}
-  - {id: 1447778660, name: "iStatistica Pro"}
-  - { id: 553245401, name: "Friendly Streaming Browser" }
-  - { id: 446243721, name: "Disk Space Analyzer: Inspector" }
-  - { id: 1553936137, name: Azure VPN Client" }
-  - { id: 1499198946, name: "Structured - Daily Planner" }
-  - { id: 1549370672, name: "Save to Raindrop.io" }
-  - { id: 937984704, name: "Amphetamine" }
-  - { id: 899247664, name: "TestFlight" }
-  # - { id: 497799835, name: "Xcode" }
+  # - { id: 1458969831, name: "JSON Peep for Safari" }
+  # - { id: 1543143740, name: "AdGuard Home Remote" }
+  # - { id: 1569813296, name: "1Password for Safari" }
+  # - { id: 1541862561, name: "FireShot Web Page Screenshots" }
+  # - { id: 408981434,  name: "iMovie" }
+  # - { id: 409183694,  name: "Keynote" }
+  # - { id: 409201541,  name: "Pages" }
+  # - { id: 409203825,  name: "Numbers" }
+  # - { id: 682658836,  name: "GarageBand" }
+  # - { id: 1447778660, name: "iStatistica Pro" }
+  # - { id: 553245401,  name: "Friendly Streaming Browser" }
+  # - { id: 446243721,  name: "Disk Space Analyzer: Inspector" }
+  # - { id: 1553936137, name: Azure VPN Client" }
+  # - { id: 1499198946, name: "Structured - Daily Planner" }
+  # - { id: 1549370672, name: "Save to Raindrop.io" }
+  # - { id: 937984704,  name: "Amphetamine" }
+  # - { id: 899247664,  name: "TestFlight" }
+  # - { id: 497799835,  name: "Xcode" }
   # - { id: 2143935391, name: "OpenCat" }
   # - { id: , name: "" }
 
